@@ -19,9 +19,9 @@ baskets <- c("NSCLC", "Colorectal Cancer 1", "Colorectal Cancer 2", "Cholangioca
 
 # scenarios
 scenario <- c("linear", "grouped", "high_variance")
-# s <- 1 # linear
+s <- 1 # linear
 # s <- 2 # grouped
-s <- 3 # high variance
+# s <- 3 # high variance
 
 ## fixed model parameters
 # beta prior: Beta(1,1) for fujikawa, cpp, app, cpplim, bma
@@ -117,9 +117,9 @@ bhmbasket::performAnalyses(
 colMeans(jags_fit$BUGSoutput$sims.list$p > 0.15)
 
 # stop debug mode
-# res_bhm$Posterior_Probabilities <- c(0.9907755, 0.2569372, 0.1445178, 0.5157492, 0.9786261, 0.7672116) # linear
+res_bhm$Posterior_Probabilities <- c(0.9907755, 0.2569372, 0.1445178, 0.5157492, 0.9786261, 0.7672116) # linear
 # res_bhm$Posterior_Probabilities <- c(0.9907755, 0.2569372, 0.1445178, 0.5157492, 0.9786261, 0.7672116) # grouped
-res_bhm$Posterior_Probabilities <- c(0.9907755, 0.2569372, 0.1445178, 0.5157492, 0.9786261, 0.7672116) # high variance
+# res_bhm$Posterior_Probabilities <- c(0.9907755, 0.2569372, 0.1445178, 0.5157492, 0.9786261, 0.7672116) # high variance
 
 # EXNEX
 exnex_prior_parameters <- bhmbasket::setPriorParametersExNex(
@@ -145,9 +145,9 @@ bhmbasket::performAnalyses(
 colMeans(jags_fit$BUGSoutput$sims.list$p > 0.15)
 
 # stop debug mode
-# res_exnex$Posterior_Probabilities <- c(0.9919754, 0.1903405, 0.1797660, 0.5542223, 0.9810259, 0.7947353) # linear
+res_exnex$Posterior_Probabilities <- c(0.9919754, 0.1903405, 0.1797660, 0.5542223, 0.9810259, 0.7947353) # linear
 # res_exnex$Posterior_Probabilities <- c(0.9919754, 0.1903405, 0.1797660, 0.5542223, 0.9810259, 0.7947353) # grouped
-res_exnex$Posterior_Probabilities <- c(0.9913754, 0.1371681, 0.1858407, 0.5777711, 0.9814009, 0.8036598) # high variance
+# res_exnex$Posterior_Probabilities <- c(0.9913754, 0.1371681, 0.1858407, 0.5777711, 0.9814009, 0.8036598) # high variance
 
 
 
